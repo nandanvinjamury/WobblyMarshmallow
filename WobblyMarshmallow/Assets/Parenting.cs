@@ -21,19 +21,16 @@ public class Parenting : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if(orphan){
+		if(orphan && (collision.gameObject.tag == "Marshmallow" || collision.gameObject.tag == "StanMarsh") ){
 			Debug.Log("Hi Mom!", gameObject);
 			orphan = false;
 
-
 			transform.rotation = collision.transform.rotation;
-
 			transform.parent = collision.transform;
 
-			float x_noise = (float) ((Random.value-.5)/4f); // [-0.25, 0.25]
-						Debug.Log(x_noise, gameObject);
+			float x_position_noise = (float) ((Random.value-.5)/4f); // [-0.125, 0.125]
 
- 			transform.localPosition = new Vector3(x_noise,2,0);
+ 			transform.localPosition = new Vector3(x_position_noise,2,0);
 
 			m_Rigidbody.constraints = 
 				RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX |
