@@ -6,8 +6,12 @@ public class Spawner : MonoBehaviour {
 
 	public GameObject fallingMarshmallow;
 	private float xRandom;
+	private int colorRandom;
 	[Range(1,5)] public float levelDifficulty;
 	Collider2D spawnCreate;
+	public Color[] color;
+	MeshRenderer mesh;
+
 	// Use this for initialization
 	void Awake () {
 		spawnCreate = gameObject.GetComponent<Collider2D>();
@@ -20,7 +24,10 @@ public class Spawner : MonoBehaviour {
 	}
 
 	public void CreateMarshmallow() {
+		colorRandom = Random.Range(0, 5);
 		xRandom = Random.Range(spawnCreate.bounds.min.x, spawnCreate.bounds.max.x);
-		Instantiate(fallingMarshmallow, new Vector3(xRandom, gameObject.transform.position.y, 0), Quaternion.identity);
+		GameObject clone = Instantiate(fallingMarshmallow, new Vector3(xRandom, gameObject.transform.position.y, 0), Quaternion.identity);
+		mesh = clone.GetComponent<MeshRenderer>();
+		mesh.material.color = color[colorRandom];
 	}
 }
