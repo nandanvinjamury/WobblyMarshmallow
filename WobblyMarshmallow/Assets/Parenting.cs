@@ -6,7 +6,8 @@ public class Parenting : MonoBehaviour {
 
 	Rigidbody m_Rigidbody;
 
-	bool orphan = true;
+	public bool orphan = true;
+	public bool parent = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,22 @@ public class Parenting : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		if(orphan && (collision.gameObject.tag == "Marshmallow" || collision.gameObject.tag == "StanMarsh") ){
+			if (collision.gameObject.tag == "Marshmallow"){
+				Parenting parentObject = collision.gameObject.GetComponent<Parenting>();
+				if(parentObject.parent){
+					return;
+				}
+				parentObject.parent = true;
+			}
+			
+			if (collision.gameObject.tag == "StanMarsh"){
+				StanMarsh parentObject = collision.gameObject.GetComponent<StanMarsh>();
+				if(parentObject.parent){
+					return;
+				}
+				parentObject.parent = true;
+			}
+
 			Debug.Log("Hi Mom!", gameObject);
 			orphan = false;
 
