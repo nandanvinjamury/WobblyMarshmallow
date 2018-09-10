@@ -8,13 +8,13 @@ public class Spawner : MonoBehaviour {
 	private float xRandom;
 	private int colorRandom;
 	[Range(1,5)] public float levelDifficulty;
-	Collider2D spawnCreate;
+	Collider spawnCreate;
 	public Color[] color;
 	MeshRenderer mesh;
 
 	// Use this for initialization
 	void Awake () {
-		spawnCreate = gameObject.GetComponent<Collider2D>();
+		spawnCreate = gameObject.GetComponent<Collider>();
 		levelDifficulty = levelDifficulty * .1f;
 		InvokeRepeating("CreateMarshmallow", 1f, 5.3f - levelDifficulty);
 	}
