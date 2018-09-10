@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e7e1c70d90b6eb246a5a433e8afbc018
 ModelImporter:
   serializedVersion: 23
-=======
-guid: 24a23cddbfcb2df43acccdf3c0aacd17
-ModelImporter:
-  serializedVersion: 22
->>>>>>> 21a1158d71052ba851a9d56741bd3b0583b586b2
   fileIDToRecycleName:
     100000: //RootNode
     100002: body
@@ -110,11 +104,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-<<<<<<< HEAD
     previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
-=======
->>>>>>> 21a1158d71052ba851a9d56741bd3b0583b586b2
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
