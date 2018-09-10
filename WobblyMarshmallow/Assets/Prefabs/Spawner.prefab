@@ -77,6 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995b5d395f1929b46b3ffa9007658940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingMarshmallow: {fileID: 1347936612196920, guid: 1e610493903234a49a2d7b7a584a5e70,
+  fallingMarshmallow: {fileID: 1743333519687836, guid: 65be1105a7158b645a2c88eb02628bcb,
     type: 2}
   levelDifficulty: 1
+  color:
+  - {r: 0.9716981, g: 0.82961017, b: 0.94899213, a: 1}
+  - {r: 0.495283, g: 0.8267919, b: 1, a: 1}
+  - {r: 0.48584908, g: 1, b: 0.7783464, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.9845306, b: 0.6650944, a: 1}
+  - {r: 1, g: 0.76333594, b: 0.3176471, a: 1}

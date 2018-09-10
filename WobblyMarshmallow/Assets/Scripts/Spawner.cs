@@ -24,10 +24,10 @@ public class Spawner : MonoBehaviour {
 	}
 
 	public void CreateMarshmallow() {
-		colorRandom = Random.Range(0, 5);
+		colorRandom = Random.Range(0, 6);
 		xRandom = Random.Range(spawnCreate.bounds.min.x, spawnCreate.bounds.max.x);
 		GameObject clone = Instantiate(fallingMarshmallow, new Vector3(xRandom, gameObject.transform.position.y, 0), Quaternion.identity);
-		mesh = clone.GetComponent<MeshRenderer>();
+		mesh = clone.GetComponentInChildren<MeshRenderer>();
 		mesh.material.color = color[colorRandom];
 	}
 }
