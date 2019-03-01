@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MarshmellowPhysics : MonoBehaviour {
 
@@ -120,5 +121,6 @@ public class MarshmellowPhysics : MonoBehaviour {
 		GameObject stanMarsh = GameObject.FindWithTag ("StanMarsh");
 		float velocity = stanMarsh.GetComponent<MarshmellowMovement> ().Velocity;
 		rb.velocity = new Vector3 (velocity * 0.9f, 0, 0);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
 	}
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AntMove : MonoBehaviour {
 
+	AudioSource al;
 	// Use this for initialization
 	void Start () {
-		
+		al = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +21,8 @@ public class AntMove : MonoBehaviour {
 	private void OnTriggerEnter(Collider collision) {
 		if (collision.gameObject.tag.Equals("Marshmallow")) {
 			gameObject.transform.localScale *= 1.1f;
+			LivesManager.lives--;
+			al.Play();
 			Destroy(collision.gameObject);
 
 		}
